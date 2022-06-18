@@ -1,0 +1,30 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+};
+
+*, body {
+    margin: 0;
+};
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Nav */
+
+.nav {
+    text-align: center;
+    background-color: rgb(243, 247, 193);
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    height: auto;
+    line-height: 1.3rem;
+    min-height: 3.75rem;
+    padding: 0 1rem;
+
+};
+
+
