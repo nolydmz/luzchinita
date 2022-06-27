@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import CartWidget from "../CartWidget";
 import "./styles.css";
 
 const menuItems = [
+    
     {
         id: 1,
         label: "Catalogo",
@@ -21,13 +23,16 @@ const NavBar = () => {
     return (
         <div className="nav">
             <h1 className="nav-logo">Luz Chinita</h1>
-            <div>
+            <div className="nav-items">
                 {menuItems.map((items)=>(
                     <a href="/" className="nav-item" key = {items.id}>
                         {items.label}
                     </a>
                 ))}
                 
+            </div>
+            <div className="cart">
+                < CartWidget/>
             </div>
         </div>
     )
