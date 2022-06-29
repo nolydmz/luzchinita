@@ -1,16 +1,9 @@
-.cart-btn {
-    background: none;
-    color: inherit;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.cart-widget {
-    width: 1.5rem;
-    height: 1.5rem;
+.landing {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button__badge {
@@ -18,7 +11,8 @@
     border-radius: 50%;
     color: white;
     padding: 2px 4px;
-}  
+}
+
 .button {
     font-size: 0.6rem;
     position: absolute;
@@ -26,7 +20,6 @@
     right: 0.7rem;
     color: white;
     display: inline-block;
-    cursor: pointer;
 }
 
 @media (max-width: 768px) {
