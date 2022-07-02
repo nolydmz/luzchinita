@@ -1,12 +1,20 @@
-import React from "react";
+import ItemCount from "../ItemCount/ItemCount";
+import React, { useEffect, useState } from "react";
+
 import "./styles.css";
 
-const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = ({texto}) => {
+  
+  const onAdd = (quantity) => {
+      console.log(`Compraste $(quantity) unidades`);
+  }
+
   return (
-    <div className="landing">
-      <span>{greeting}</span>
-    </div>
-  );
-};
+    <>
+        <title greeting={texto} />
+        <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+    </>
+  )
+}
 
 export default ItemListContainer;
