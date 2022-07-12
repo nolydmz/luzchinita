@@ -1,23 +1,25 @@
-import React, {
-    useState
-} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget";
 import "./styles.css";
 
-const menuItems = [
+const categories = [
 
     {
         id: 1,
-        label: "Catalogo",
+        path: '/',
+        label: "Home",
     },
 
     {
         id: 2,
-        label: "Nosotros",
+        path: '/category/remeras',
+        label: "Remeras",
     },
     {
         id: 3,
-        label: "Registrate",
+        path: 'category/busos',
+        label: "Busos",
     }
 ];
 
@@ -27,10 +29,10 @@ const NavBar = () => {
         <div className="nav">
             <span className="nav-logo"> Luz Chinita </span> 
         <div className={`nav-items ${isOpen ? "open" : ""}`.trim()}> 
-            {menuItems.map((item) => ( 
-                <a href="/" className="nav-item" key={item.id}> 
-                {item.label} 
-                </a>
+            {categories.map((category) => ( 
+                <Link to={category.path} className="nav-item" key={category.id}> 
+                {category.label} 
+                </Link>
             ))} 
         </div> 
         <div className="cart">
@@ -41,10 +43,8 @@ const NavBar = () => {
             <div className = "cart-mobile" >
                 <CartWidget />
             </div> 
-            <div 
-                className={`nav-toggle ${isOpen ? "open" : ""}`.trim()}
-                onClick = {() => setIsOpen((isOpen) => !isOpen)} 
-                >
+            <div className={`nav-toggle ${isOpen ? "open" : ""}`.trim()}
+                onClick = {() => setIsOpen((isOpen) => !isOpen)} >
             <div className = "bar" > </div> 
             </div> 
         </div> 

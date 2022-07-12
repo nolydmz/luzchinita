@@ -1,20 +1,40 @@
-import ItemCount from "../ItemCount/ItemCount";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
+import ItemList from '../ItemList/ItemList';
+import { getProds } from "../../mocks/products";
+import { useParams } from 'react-router-dom'
 
-import "./styles.css";
+const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-export const ItemListContainer = ({texto}) => {
-  
-  const onAdd = (quantity) => {
-      console.log(`Compraste $(quantity) unidades`);
-  }
+    const { categoryId } = useParams();
+    //console.log(parametro.categoryId);
 
-  return (
-    <>
-        <title greeting={texto} />
-        <ItemCount initial={1} stock={5} onAdd={onAdd}/>
-    </>
-  )
-}
+    useEffect(() => {
+        setLoading(true);
+        getProds(categoryId)
+            .then((res) => {
+                setProducts(res);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                setLoading(false);
+            }); 
+    }, [categoryId]);
+
+    return (
+        <div>
+            {loading ? (
+                <h2>Cargando...</h2>
+            ) : (
+                <>
+                    <ItemList items={products} />
+                </>
+            )}
+        </div>
+    )
+};
 
 export default ItemListContainer;
