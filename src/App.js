@@ -17,7 +17,6 @@ function App() {
             <Route path="/category/:categoryId" element={<ItemListContainer/>} /> 
             <Route path="/detail/:id" element={<ItemDetailContainer />} />  
             <Route path="/cart" element={<CartWidget />} /> 
-            <ItemCount />
         </Routes>
         </BrowserRouter>
     );

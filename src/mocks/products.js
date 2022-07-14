@@ -56,7 +56,7 @@ export const productos = [
         category: 'Busos',
     },
     {
-        id:'06', 
+        id:'07', 
         name:'Bueso Balenciaga 3',
         price: 800 , 
         description:"Buso rustico, TELA: Gris melange, TALLES: 1, 2, 3, 4", 
