@@ -1,8 +1,10 @@
 import "./ItemDetail.css";
 import React from  "react";
+import { Link } from 'react-router-dom';
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ product }) => {
+
     return (
         <div className="detail">
             <img src={product.imag} alt={product.name} width="400" />
@@ -13,7 +15,6 @@ const ItemDetail = ({ product }) => {
                 <h4>Stock: {product.stock}</h4>
                 <ItemCount stock={product.stock} initial={1} />
             </div>
-            <button>Ver mas</button>
         </div>
     );
 };

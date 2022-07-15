@@ -13,12 +13,12 @@ const categories = [
 
     {
         id: 2,
-        path: '/category/remeras',
+        path: '/category/Remeras',
         label: "Remeras",
     },
     {
         id: 3,
-        path: 'category/busos',
+        path: 'category/Busos',
         label: "Busos",
     }
 ];
