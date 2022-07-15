@@ -13,7 +13,7 @@ const ItemDetail = ({ product }) => {
                 <h4>Stock: {product.stock}</h4>
                 <ItemCount stock={product.stock} initial={1} />
             </div>
-            <ItemCount />
+            <button>Ver mas</button>
         </div>
     );
 };
