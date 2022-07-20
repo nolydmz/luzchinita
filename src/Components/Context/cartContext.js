@@ -17,16 +17,15 @@ const CartProvider = ( props ) => {
         return cart.some((prod) => prod.id === id);
     };
     const sumarCantidad = (id, cantidad) => {
-        const newCart = cart. map((prod) =>
-            prod. id === id
-    ? { ... prod, cantidad: prod. cantidad + cantidad }
-                : prod
+        const newCart = cart.map((prod) =>
+            prod.id === id
+    ? { ...prod, cantidad:prod.cantidad + cantidad } : prod
         );
 
         setCart(newCart);
     };
     const deleteItem = (id) => {
-        const itemsFiltrados = cart. filter((prod) => prod. id !== id);
+        const itemsFiltrados = cart.filter((prod) => prod.id !== id);
         setCart(itemsFiltrados);
     };
 
