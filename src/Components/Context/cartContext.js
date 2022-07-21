@@ -18,8 +18,7 @@ const CartProvider = ( props ) => {
     };
     const sumarCantidad = (id, cantidad) => {
         const newCart = cart.map((prod) =>
-            prod.id === id
-    ? { ...prod, cantidad:prod.cantidad + cantidad } : prod
+            prod.id === id ? { ...prod, cantidad:prod.cantidad + cantidad } : prod
         );
 
         setCart(newCart);
@@ -38,6 +37,7 @@ const CartProvider = ( props ) => {
 
     return (
         <CartContext.Provider value={{ cart, addToCart, deleteItem, calcularTotal }}>
+            {props.children}
         </CartContext.Provider>
     );
 };

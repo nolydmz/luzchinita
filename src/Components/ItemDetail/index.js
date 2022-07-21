@@ -1,8 +1,10 @@
-import "./ItemDetail.css";
+
 import React, { useState, useContext } from  "react";
 import { Link } from 'react-router-dom';
 import { CartContext } from "../Context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
+
+import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
     const [cantidad, setCantidad] = useState(0);
@@ -17,7 +19,7 @@ const ItemDetail = ({ product }) => {
 
     return (
         <div className="detail">
-            <img src={product.imag} alt={product.name} width="400" />
+            <img src={product.img} alt={product.name} width="400" />
             <div>
                 <h1>{product.name}</h1>
                 <h2>{product.description}</h2>

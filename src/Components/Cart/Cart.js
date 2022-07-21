@@ -9,7 +9,7 @@ const Cart = () => {
     //console.log(cart);
 
     if (cart.length === 0) {
-        return <h2>Está vacío tu carrito, andá a comprar</h2>;
+        return <h2>Comprar</h2>;
     }
 
     return (
