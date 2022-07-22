@@ -57,7 +57,7 @@ export const productos = [
     },
     {
         id:'07', 
-        name:'Bueso Balenciaga 3',
+        name:'Buso Edicion Limitada',
         price: 800 , 
         description:"Buso rustico, TELA: Gris melange, TALLES: 1, 2, 3, 4", 
         img:'/img/buso_edicionlimitada_grism.png', 
