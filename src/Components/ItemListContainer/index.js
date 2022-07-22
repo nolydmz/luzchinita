@@ -8,30 +8,27 @@ import {getDocs, collection, query} from "firebase/firestore";
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-
     const { categoryId } = useParams();
-    
 
 
     useEffect(() => {
+
         const productsCollection = collection(db,"productos");
-        getDocs(productsCollection)
+        const q = query(productsCollection, where("category", "==", "Remeras"));
+        
+        getDocs(q)
         .then(result => {
-            console.log(result.docs);
+            const lista = result.docs.map(product => {
+                return {
+                    id: product.id,
+                    ...product.data(),
+                }
+            })
+            setProducts(lista);
         })
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
 
-
-        setLoading(true);
-        getProds(categoryId)
-            .then((res) => {
-                setProducts(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            }); 
     }, [categoryId]);
 
     return (
